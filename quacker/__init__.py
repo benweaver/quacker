@@ -3,9 +3,21 @@
 from .chip import Chip
 from .bag import Bag
 from .cauldron import Cauldron
+from .simulator import (
+    simulate_round,
+    StopAt,
+    stop_before_big_white,
+    StopAtChance,
+    explosion_chance,
+)
 
 __all__ = [
     "Chip",
     "Bag",
     "Cauldron",
+    "simulate_round",
+    "StopAt",
+    "stop_before_big_white",
+    "StopAtChance",
+    "explosion_chance",
 ]
