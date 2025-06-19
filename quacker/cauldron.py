@@ -26,6 +26,10 @@ class Cauldron:
         """Sum of all chip values currently in the cauldron."""
         return sum(c.value for c in self._chips)
 
+    def white_total(self) -> int:
+        """Sum of white chip values currently in the cauldron."""
+        return sum(c.value for c in self._chips if c.color == "white")
+
     def chips(self) -> List[Chip]:
         """Return a copy of chips currently in the cauldron."""
         return list(self._chips)
