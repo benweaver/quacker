@@ -1,7 +1,15 @@
 import argparse
 import re
 
-from . import Bag, StopAt, stop_before_big_white, StopAtChance, simulate_round
+from . import (
+    Bag,
+    StopAt,
+    stop_before_big_white,
+    StopAtChance,
+    simulate_round,
+    score_cauldron,
+    progress,
+)
 
 
 def parse_bag(bag_desc: str) -> Bag:
@@ -65,9 +73,13 @@ def main(argv=None):
         raise ValueError('Unknown strategy')
 
     cauldron, exploded = simulate_round(bag, strategy)
+    vp, rubies = score_cauldron(cauldron)
     print("Drawn:", [(c.color, c.value) for c in cauldron.chips()])
+    print("Total value:", progress(cauldron))
     print("Total white:", cauldron.white_total())
     print("Exploded:", exploded)
+    print("Victory points:", vp)
+    print("Rubies:", rubies)
 
 
 if __name__ == '__main__':

@@ -10,6 +10,12 @@ from .simulator import (
     StopAtChance,
     explosion_chance,
 )
+from .score import (
+    progress,
+    victory_points,
+    rubies,
+    score_cauldron,
+)
 
 __all__ = [
     "Chip",
@@ -20,4 +26,8 @@ __all__ = [
     "stop_before_big_white",
     "StopAtChance",
     "explosion_chance",
+    "progress",
+    "victory_points",
+    "rubies",
+    "score_cauldron",
 ]
